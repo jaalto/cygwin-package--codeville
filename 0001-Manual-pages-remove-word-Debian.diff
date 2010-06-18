@@ -1,0 +1,76 @@
+From f643203196f5c419d150ea727b6bce1ed355377b Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Sat, 23 Feb 2008 13:05:50 +0200
+Subject: [PATCH] Manual pages: remove word Debian
+
+Signed-off-by: Jari Aalto <jari.aalto@cante.net>
+---
+ cdv-agent.1  |    4 ++--
+ cdv.1        |    3 +--
+ cdvpasswd.1  |    4 ++--
+ cdvserver.1  |    4 ++--
+ cdvupgrade.1 |    4 ++--
+ 5 files changed, 9 insertions(+), 10 deletions(-)
+
+diff --git a/cdv-agent.1 b/cdv-agent.1
+index 361c046..1ed3e6c 100644
+--- a/cdv-agent.1
++++ b/cdv-agent.1
+@@ -21,5 +21,5 @@ from the \fBssh\-agent\fP and perform the same purpose.
+ .BR http://www.codeville.com
+ 
+ .SH AUTHOR
+-This manual page was written by Michael Janssen <jamuraa@debian.org>,
+-for the Debian GNU/Linux system (but may be used by others).
++This manual page was written by Michael Janssen <jamuraa@debian.org>.
++
+diff --git a/cdv.1 b/cdv.1
+index f92f765..e3498cd 100644
+--- a/cdv.1
++++ b/cdv.1
+@@ -179,5 +179,4 @@ All printed graphs are output in a format intended to be run through graphviz to
+ This manual page was written by Michael Janssen <jamuraa@debian.org> from the 
+ documentation available at 
+ .UR http://www.codeville.org/
+-.BR http://www.codeville.org/,
+-for the Debian GNU/Linux system (but may be used by others).
++.BR http://www.codeville.org/
+diff --git a/cdvpasswd.1 b/cdvpasswd.1
+index ca32da9..7b97937 100644
+--- a/cdvpasswd.1
++++ b/cdvpasswd.1
+@@ -18,5 +18,5 @@ Specify the password file to modify.
+ .BR http://www.codeville.org/
+ 
+ .SH AUTHOR
+-This manual page was written by Michael Janssen <jamuraa@debian.org>,
+-for the Debian GNU/Linux system (but may be used by others).
++This manual page was written by Michael Janssen <jamuraa@debian.org>.
++
+diff --git a/cdvserver.1 b/cdvserver.1
+index 03109e8..038be5c 100644
+--- a/cdvserver.1
++++ b/cdvserver.1
+@@ -47,5 +47,5 @@ Rebuild internal data structures on startup.
+ .UR http://www.codeville.org
+ .BR http://www.codeville.org
+ .SH AUTHOR
+-This manual page was written by Michael Janssen <jamuraa@debian.org>,
+-for the Debian GNU/Linux system (but may be used by others).
++This manual page was written by Michael Janssen <jamuraa@debian.org>.
++
+diff --git a/cdvupgrade.1 b/cdvupgrade.1
+index fc4a866..6a8d192 100644
+--- a/cdvupgrade.1
++++ b/cdvupgrade.1
+@@ -16,5 +16,5 @@ of either a checked-out repository or a server instance.
+ .BR http://www.codeville.org/
+ 
+ .SH AUTHOR
+-This manual page was written by Michael Janssen <jamuraa@debian.org>,
+-for the Debian GNU/Linux system (but may be used by others).
++This manual page was written by Michael Janssen <jamuraa@debian.org>.
++
+-- 
+1.5.3.8
+

@@ -1,0 +1,374 @@
+From 09914166a2eeb8cdb1df7bf90030fc982ca256ac Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Sat, 23 Feb 2008 13:25:17 +0200
+Subject: [PATCH] Manual pages: remove EOL whitespaces
+
+Signed-off-by: Jari Aalto <jari.aalto@cante.net>
+---
+ cdv-agent.1  |   15 +++++------
+ cdv.1        |   76 +++++++++++++++++++++++++++++-----------------------------
+ cdvpasswd.1  |   10 ++++----
+ cdvserver.1  |   37 +++++++++++++--------------
+ cdvupgrade.1 |    7 ++---
+ 5 files changed, 71 insertions(+), 74 deletions(-)
+
+diff --git a/cdv-agent.1 b/cdv-agent.1
+index 1ed3e6c..df316ce 100644
+--- a/cdv-agent.1
++++ b/cdv-agent.1
+@@ -1,25 +1,24 @@
+ .TH "CDV-AGENT" 1 "Dec 1 2005"
+-.SH NAME 
++.SH NAME
+ cdv\-agent \- codeville authentication agent
+-.SH SYNOPSIS 
++.SH SYNOPSIS
+ .nf
+ .B cdv\-agent [\-a \fIbind_address\fP] [\-c | \-s] [\-t life] [\-d] [command [args ...]]
+ .B cdv\-agent [\-c | \-s] \-k
+ .fi
+ 
+-.SH DESCRIPTION 
++.SH DESCRIPTION
+ 
+ \fBcdv-agent\fP is a agent for holding passwords for a codeville server, so
+-that users don't need to type passwords so much.  The options are taken 
++that users don't need to type passwords so much.  The options are taken
+ from the \fBssh\-agent\fP and perform the same purpose.
+ 
+-.SH SEE ALSO 
+-.BR ssh-agent (1), 
+-.BR cdvserver (1), 
++.SH SEE ALSO
++.BR ssh-agent (1),
++.BR cdvserver (1),
+ .BR cdv (1),
+ .UR http://www.codeville.com
+ .BR http://www.codeville.com
+ 
+ .SH AUTHOR
+ This manual page was written by Michael Janssen <jamuraa@debian.org>.
+-
+diff --git a/cdv.1 b/cdv.1
+index e3498cd..c3088a4 100644
+--- a/cdv.1
++++ b/cdv.1
+@@ -5,7 +5,7 @@ cdv \- codeville command line client tool
+ .B cdv \fIcommand\fP [\fIoptions\fP]
+ .SH DESCRIPTION
+ 
+-\fBcdv\fP is a client for \fBcodeville\fP, a distributed version control 
++\fBcdv\fP is a client for \fBcodeville\fP, a distributed version control
+ system.  It aims to perform the same job as SVN, CVS, RCS, arch, etc.
+ 
+ .SH COMMAND OVERVIEW
+@@ -18,10 +18,10 @@ Add new files to the repository. All files must be added before they will be par
+ .B "commit [\-b] [\-m ""<comment>""] [\-n]"
+ Commits all changes made to the repository since the last commit. A comment is required for every commit. It may either be supplied via the \-m option for simple comments or if the \-m option is omitted, whatever editor is specified in the EDITOR environment variable will be launched. If no editor is specified, vi is the default in all unixy environments (including OS X and cygwin) and Notepad is the default in Windows. In the editor, a comment may be added at the top, and file changes which the user does not wish to have in a given changeset can be removed by deleting them from the "### files" list at the bottom (although merging cannot be avoided through deleting things from the "### merge files" list). Every commit creates a changeset. If there are changes since the last update, files will be merged. In the event of unresolved conflicts, the user will be prompted to resolve them.
+ 
+-.B "\-n" 
++.B "\-n"
+ used to commit changes off-line. Changes committed off-line can still be used with all commands, but are not visible to other users until an on-line commit is done.
+ 
+-.B "\-b" 
++.B "\-b"
+ forces commit to not make a new changeset. This will commit changes which have already been committed locally via \-n (or as a result of having multiple repositories involved), but will not create a new changeset for existing file modifications. This is especially needed for committing to back-up servers (servers started with \-b) as it is the only way to commit changes to a back-up server. This is not the recommended way to commit changes to normal servers. In general, if one wishes to commit changes committed offline without committing new changes, one should commit and changeset with all the files in the ""### files"" list removed.
+ 
+ .TP
+@@ -32,98 +32,98 @@ Recreates the repository at the given changeset.
+ .B "create <repository name>"
+ Creates a new repository with the appropriate name.
+ 
+-.TP 
++.TP
+ .B "describe [\-x|\-d] [\-s] <changeset>"
+ Gives the description of the changeset including the long name of the change, the user who made the change, that date it was made, the comment, the relation it has to other changesets, and what files were modified and in what manner they were modified (i.e. added, modified, renamed, or deleted).
+ 
+-.B "\-s" 
++.B "\-s"
+ gives a short description
+ 
+-.B "\-d" 
++.B "\-d"
+ does a diff
+ 
+-.B "\-x" 
++.B "\-x"
+ displays an XML version of the output. This is not compatible with displaying a diff. This can only be used with parenthesized changesets from the file history. It's sort of a hack right now, really.
+ 
+ .TP
+ .B "destroy <repository>"
+ Destroys a repository. The opposite of create.
+ 
+-.TP 
++.TP
+ .B "diff [\-r <changeset> [\-r <changeset>] ] [<files>]"
+ Does a diff between different versions of each of given files. If no files are specified, all relevant files are shown. The first \-r option indicates which changeset the diff should be from, the second which it should be to. If no changesets are specified, it shows the difference between the last known state of the repository and the current client state.
+ 
+-.TP 
++.TP
+ .B "edit <files>"
+ Enables editting a file. When not in edit-mode, this is unnecessary.
+ 
+-.TP 
++.TP
+ .B "heads"
+ Lists the root nodes in the graph of changesets.
+ 
+-.TP 
++.TP
+ .B "history [\-h <changeset>] [\-n <number>] [\-s <skip count>] [\-v] [<files>]"
+ Gives the history of the repository or of the files specified. Specifically, it lists all relevant change sets by short name, user, date, and comment in most recent first order.
+ 
+ .B \-n
+ limits the number of changes printed to the given number
+ 
+-.B \-h 
++.B \-h
+ causes it to print the history starting at the given changeset.
+ 
+-.B \-s 
++.B \-s
+ skips the first <skip count> changes.
+ 
+-.B \-v 
++.B \-v
+ causes it to print the changes verbosely which includes additional information about each changeset which affected the files.
+ 
+-.TP 
++.TP
+ .B "init"
+-Initialize a new client with the current directory as the root. Specify a directory other than current one by using the top level 
+-.B \-p 
++Initialize a new client with the current directory as the root. Specify a directory other than current one by using the top level
++.B \-p
+ switch.
+ 
+-.TP 
++.TP
+ .B "is_ancestor <changeset1> <changeset2>
+ Tells whether or not <changeset1> is an ancestor of <changeset2>. Note that it is possible for neither changeset to be an ancestor of the other.
+ 
+-.TP 
++.TP
+ .B "last-modified <file>"
+ Returns the last changeset which modified a given file.
+ 
+-.TP 
++.TP
+ .B "list-repos"
+ Lists all the repositories on the same server as the repository you are in.
+ 
+-.TP 
++.TP
+ .B "password"
+ Change your password.
+ 
+-.TP 
++.TP
+ .B "print_dag [\-h <changeset>] [\-h <changeset>] [...] <file>"
+ Prints the directed acyclic graph which shows the changesets which have been applied to a file and their relationships.
+ 
+-Changesets specified with 
+-.B \-h 
++Changesets specified with
++.B \-h
+ are treated as head nodes for the graph (i.e. later changesets are excluded).
+ 
+-.TP 
++.TP
+ .B "print_history [<changeset>]"
+ Prints the directed acylcic graph of the the entire history. Starts at the given changeset, if provided.
+ 
+-.TP 
++.TP
+ .B "rebuild"
+ Recreates all of the metadata from the static history. This should generally only be done when instructed to by software upgrade instructions.
+ 
+-.TP 
++.TP
+ .B "remove <files>"
+ Deletes files from the repository.
+ 
+-.TP 
++.TP
+ .B "rename <file> <newname>"
+ Moves or renames files.
+ 
+-.TP 
++.TP
+ .B "revert [\-a] <files>"
+ Reverts any local changes to the file. At this time only changes to the content of the file can be reverted. The ability to revert adds, deletes, and renames will be coming in the future.
+ 
+@@ -131,25 +131,25 @@ There is a subtle difference in the definition of revert from what you might exp
+ 
+ Revert should be thought of as throwing away uncommitted changes.
+ 
+-.B \-a 
++.B \-a
+ indicates files should only be reverted if they have not been modified. Basically unmarks them as open for edit.
+ 
+-.TP 
++.TP
+ .B "set <variable> <value>"
+ Sets a Codeville variable to a given value.
+ 
+-.TP 
++.TP
+ .B "show-vars"
+ Show a list of all Codeville variables and what they are set to.
+ 
+-.TP 
++.TP
+ .B "status [\-v]"
+ Shows changes not yet committed to the repository in brief.
+ 
+-.B \-v 
++.B \-v
+ gives more verbose status which includes mention of files which are in the directory space, but not in the repository and files missing from the directory space.
+ 
+-.TP 
++.TP
+ .B "unset <variable>"
+ Removes a Codeville variable so that it no longer has any setting.
+ 
+@@ -157,7 +157,7 @@ Removes a Codeville variable so that it no longer has any setting.
+ .B "update [\-d]"
+ Gets all changes made to the repository since the last time you did an update. Files will be merged as necessary. In the event of unresolved conflicts, the user will be asked to resolve them.
+ 
+-.B \-d 
++.B \-d
+ pull in changesets but do not merge them. Has no effect on the workspace state. This allows a user to browse and diff changesets without having to merge.
+ 
+ 
+@@ -176,7 +176,7 @@ All printed graphs are output in a format intended to be run through graphviz to
+ .BR http://www.codevile.org/
+ 
+ .SH AUTHOR
+-This manual page was written by Michael Janssen <jamuraa@debian.org> from the 
+-documentation available at 
++This manual page was written by Michael Janssen <jamuraa@debian.org> from the
++documentation available at
+ .UR http://www.codeville.org/
+ .BR http://www.codeville.org/
+diff --git a/cdvpasswd.1 b/cdvpasswd.1
+index 7b97937..0b4fa14 100644
+--- a/cdvpasswd.1
++++ b/cdvpasswd.1
+@@ -6,14 +6,14 @@ cdvpasswd \- adds, removes, or sets passwords for users of a cdv server.
+ .SH OPTIONS
+ .TP
+ .B "\-c <filename>"
+-Specify the config file which the server is running on. 
+-.TP 
++Specify the config file which the server is running on.
++.TP
+ .B "\-f <filename>"
+ Specify the password file to modify.
+ 
+-.SH SEE ALSO 
+-.BR cdv (1), 
+-.BR cdvserver (1), 
++.SH SEE ALSO
++.BR cdv (1),
++.BR cdvserver (1),
+ .UR http://www.codeville.org/
+ .BR http://www.codeville.org/
+ 
+diff --git a/cdvserver.1 b/cdvserver.1
+index 038be5c..75c6da3 100644
+--- a/cdvserver.1
++++ b/cdvserver.1
+@@ -1,51 +1,50 @@
+ .TH "CDVSERVER" 1 "Dec 1 2005"
+-.SH NAME 
++.SH NAME
+ cdvserver \- server for the codeville distributed revision system.
+ .SH SYNOPSIS
+ .B cdvserver [\-c \fBfile\fP | \-n] [\-f \fBfile\fP] [\-l \fBfile\fP] [-p \fBfile\fP] [\-b] [\-d] [\-r] [\-u \fBuser\fP]
+ .SH DESCRIPTION
+-This manual page documents briefly the \fBcdvserver\fP 
++This manual page documents briefly the \fBcdvserver\fP
+ command.
+ This manual page was written for the Debian distribution
+ because the original program does not have a manual page.
+ .PP
+-\fBcdvserver\fP is a server for the codeville distributed 
+-revision system.  A server keeps track of revisions and holds a 
++\fBcdvserver\fP is a server for the codeville distributed
++revision system.  A server keeps track of revisions and holds a
+ database used for revision control.   The codeville system
+ needs both a server and a client.  \fBcdv\fP is the only
+ known codeville client.
+ .SH OPTIONS
+ .B \-c <configfile>
+ Specify file to use as a configuration file.
+-.TP 
++.TP
+ .B \-n
+ Don't use a configuration file.
+ .TP
+-.B \-f <datadir> 
++.B \-f <datadir>
+ Specify where all the database files and password file go.
+-.TP 
+-.B \-l <logfile> 
++.TP
++.B \-l <logfile>
+ Specify where the server output goes when daemonized.
+-.TP 
++.TP
+ .B \-p <pidfile>
+ Specify a file to hold the process ID of the server in.
+-.TP 
++.TP
+ .B \-b
+ Start server in backup mode.
+-.TP 
+-.B \-d 
++.TP
++.B \-d
+ Don't daemonize, won't write pidfile or logfile.
+-.TP 
++.TP
+ .B \-u <user>
+ Run as the given user, must be root to do this.
+-.TP 
+-.B \-r 
++.TP
++.B \-r
+ Rebuild internal data structures on startup.
+-.SH SEE ALSO 
+-.BR cdv (1), 
+-.BR cdvpasswd (1), 
++.SH SEE ALSO
++.BR cdv (1),
++.BR cdvpasswd (1),
+ .UR http://www.codeville.org
+ .BR http://www.codeville.org
+ .SH AUTHOR
+ This manual page was written by Michael Janssen <jamuraa@debian.org>.
+-
+diff --git a/cdvupgrade.1 b/cdvupgrade.1
+index 6a8d192..1ba0491 100644
+--- a/cdvupgrade.1
++++ b/cdvupgrade.1
+@@ -9,12 +9,11 @@ cdvupgrade \- upgrades codeville repositories and server directories
+ Specify the directory to upgrade.  This directory can be the base directory
+ of either a checked-out repository or a server instance.
+ 
+-.SH SEE ALSO 
+-.BR cdv (1), 
+-.BR cdvserver (1), 
++.SH SEE ALSO
++.BR cdv (1),
++.BR cdvserver (1),
+ .UR http://www.codeville.org/
+ .BR http://www.codeville.org/
+ 
+ .SH AUTHOR
+ This manual page was written by Michael Janssen <jamuraa@debian.org>.
+-
+-- 
+1.5.3.8
+
