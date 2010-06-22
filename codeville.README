@@ -71,8 +71,11 @@ Port Notes:
 - No manual pages. Copied from Debian.
 - Documentation was imported from homepage with 'lynx -dump'
 
+----- version 0.8.0-3 -----
+- Python 2.6 2010-06-17 Jari Aalto
+
 ----- version 0.8.0-1 -----
 - Initial release 2008-02-23 Jari Aalto
 
 Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
-Copyright (C) 2008 Jari Aalto; Licensed under GPL v2 or later
+Copyright (C) 2008-2010 Jari Aalto; Licensed under GPL v2 or later
