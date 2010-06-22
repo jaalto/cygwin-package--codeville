@@ -5,7 +5,7 @@ Subject: Updated: codeville 0.8.0-3 -- Python based distributed version control 
 PACKAGE DESCRIPTION
 ===================
 
-Homepage: http://freshmeat.net/projects/codeville/
+Homepage: http://freshmeat.net/projects/codeville
 License : GPL
 
 A python-based distributed version control system that began with a
@@ -17,6 +17,7 @@ CHANGES SINCE LAST RELEASE
 ==========================
 
 - Built for Python 2.6
+- See homepage and section "Recent release"
 
 INSTALL OR UPGRADE NOTES
 ========================
