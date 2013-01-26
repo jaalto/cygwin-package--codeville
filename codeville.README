@@ -1,7 +1,7 @@
 codeville
 ------------------------------------------
 
-A distributed version control system implemented in Python
+Python based distributed version control (DVCS)
 
 A python-based distributed version control system that began with a
 novel idea for a merge algorithm and has grown from there. It is
