@@ -1,5 +1,5 @@
 To: cygwin-announce@cygwin.com
-Subject: Updated: codeville 0.8.0-3 -- A distributed version control system implemented in Python
+Subject: Updated: codeville 0.8.0-4 -- A distributed version control system implemented in Python
 
 PACKAGE DESCRIPTION
 ===================
@@ -15,7 +15,7 @@ very large distributed ones.
 CHANGES SINCE LAST RELEASE
 ==========================
 
-- Built for Python 2.6
+- Built for Python 2.7
 
 INSTALL OR UPGRADE NOTES
 ========================
