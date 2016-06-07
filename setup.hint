@@ -1,3 +1,4 @@
+# ARCH=noarch
 sdesc: "Python based distributed version control (DVCS)"
 ldesc: "A python-based distributed version control system that began with a
 novel idea for a merge algorithm and has grown from there. It is
